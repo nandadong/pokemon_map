@@ -45,13 +45,13 @@ function get_layer_from_map_items(map_items) {
     return layer;
 }
 function add_pokemon_layer() {
-    var pokemon_layer = get_layer_from_map_items(map_items);
+    var pokemon_layer = get_layer_from_map_items(map_manager.map_items);
     map_manager.map.layers.insert(pokemon_layer);
 }
 // 3. Add pokemon count-down refresh
 function refresh_pokemon_layer() {
     // Prepare new layer
-    var pokemon_layer = get_layer_from_map_items(map_items);
+    var pokemon_layer = get_layer_from_map_items(map_manager.map_items);
     // Remove old layer
     map_manager.map.layers.clear();
     // Add new layer
