@@ -22,7 +22,7 @@ function loadMapScenario() {
 
 function get_count_down_from_expire(epoch) {
     var now_time = new Date().getTime() / 1000;
-    var time_left = epoch - now_time;
+    var time_left = epoch / 1000 - now_time;
     var second = Math.floor(time_left % 60);
     var minute = Math.floor(time_left / 60);
     if (second < 10) {
@@ -73,7 +73,7 @@ function refresh_pokemon_data() {
     var body = { };
     var additionalParams = { };
 
-apigClient.mapPokemonsGet(params, body, additionalParams)
+    apigClient.mapPokemonsGet(params, body, additionalParams)
     .then(function(result){
         //This is where you would put a success callback
         map_manager.map_items = result.data;
