@@ -36,6 +36,7 @@ function get_layer_from_map_items(map_items) {
     var pushpins = [];
     for (var i in map_items) {
         var map_item = map_manager.map_items[i];
+        console.log(map_item["latitude"]);
         var pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(map_item["latitude"], map_item["longitude"]), 
                                                  { icon: 'images/pushpin_images/pokemon/' + map_item["pokemon_id"] + '.png',
                                                    title: get_count_down_from_expire(map_item["expire"]) });
